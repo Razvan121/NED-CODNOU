@@ -34,16 +34,16 @@ import org.firstinspires.ftc.teamcode.NEDRobot.trajectorysequence.TrajectorySequ
 
 @Config
 @Autonomous(name = "1+4 HIGH-RIGHT")
-public class AutoRightBeleaua extends LinearOpMode {
+public class AutoRightFullStack extends LinearOpMode {
 
     private FtcDashboard ftcDashboard;
-  /*  private IntakeSubsystem intakeSubsystem;
-    private OdometrySubsystem odometrySubsystem;
+    /*  private IntakeSubsystem intakeSubsystem;
+      private OdometrySubsystem odometrySubsystem;
 
-    private Dr4bAutoSubsystem dr4bAutoSubsystem;
-    private SampleMecanumDrive drive;
+      private Dr4bAutoSubsystem dr4bAutoSubsystem;
+      private SampleMecanumDrive drive;
 
-   */
+     */
     public BaseRobotAuto robot;
     private VoltageSensor voltageSensor;
 
@@ -284,7 +284,7 @@ public class AutoRightBeleaua extends LinearOpMode {
 
 
             telemetry.addLine("start");
-            telemetry.addLine("Running 4 Cycle HIGH");
+            telemetry.addLine("Running 5 Cycle HIGH");
             telemetry.addData("position",robot.vision.getPosition());
             telemetry.addData("Voltage", voltageSensor.getVoltage());
             telemetry.update();
@@ -305,7 +305,7 @@ public class AutoRightBeleaua extends LinearOpMode {
                                 new InstantCommand(()->robot.intake.update(IntakeSubsystem.ClawState.CLOSE)),
                                 new InstantCommand(()->robot.intake.update(IntakeSubsystem.FourbarState.TRANSITION_DEPOSIT)),
                                 new WaitCommand(1360)
-                                .andThen(new InstantCommand(()-> robot.lift.newProfile(HighJunctionPos)))
+                                        .andThen(new InstantCommand(()-> robot.lift.newProfile(HighJunctionPos)))
                         ),
                         new WaitCommand(350),
                         new InstantCommand(()->robot.intake.update(IntakeSubsystem.FourbarState.DEPOSIT)),
@@ -504,15 +504,15 @@ public class AutoRightBeleaua extends LinearOpMode {
                                         .andThen(new FollowTrajectoryCommand(robot.drivetrain,position == 1? Park1 : position == 2?Park2 : Park3)),
                                 new InstantCommand(()-> robot.intake.update(IntakeSubsystem.ClawState.CLOSE))
                                         .andThen(new WaitCommand(300))
-                                            .andThen(new InstantCommand(()-> robot.intake.update(IntakeSubsystem.FourbarState.TRANSITION_DEPOSIT))
+                                        .andThen(new InstantCommand(()-> robot.intake.update(IntakeSubsystem.FourbarState.TRANSITION_DEPOSIT))
                                                 .andThen(new InstantCommand(()-> robot.lift.newProfile(0)))
-                                                    .andThen( new InstantCommand(()->robot.intake.update(IntakeSubsystem.ClawState.OPEN))))
-                                                        .andThen(new InstantCommand(()->robot.intake.update(IntakeSubsystem.FourbarState.INTAKE)))
+                                                .andThen( new InstantCommand(()->robot.intake.update(IntakeSubsystem.ClawState.OPEN))))
+                                        .andThen(new InstantCommand(()->robot.intake.update(IntakeSubsystem.FourbarState.INTAKE)))
 
                         ),
 
 
-                       new InstantCommand(this::requestOpModeStop)
+                        new InstantCommand(this::requestOpModeStop)
                 )
 
         );
