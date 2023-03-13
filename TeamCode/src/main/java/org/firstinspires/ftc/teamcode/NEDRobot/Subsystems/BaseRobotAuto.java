@@ -14,6 +14,8 @@ public class BaseRobotAuto {
     public IntakeSubsystem intake;
     public Dr4bAutoSubsystem lift;
     public SampleMecanumDrive drivetrain;
+
+
     public Vision vision;
     private boolean isAuto;
 

@@ -11,14 +11,14 @@ public class TeleopDepositCommand extends SequentialCommandGroup {
     public TeleopDepositCommand(BaseRobot robot){
         super(
                 new InstantCommand(() -> robot.intakeSubsystem.update(IntakeSubsystem.ClawState.OPEN)),
-                new WaitCommand(250),
+                new WaitCommand(300),
                 new InstantCommand(()->robot.intakeSubsystem.update(IntakeSubsystem.ClawState.CLOSE)),
                 new WaitCommand(150),
                 new InstantCommand(() -> robot.intakeSubsystem.update(IntakeSubsystem.FourbarState.TRANSITION_DEPOSIT)),
                 new WaitCommand(150),
                 new InstantCommand(() ->robot.intakeSubsystem.update(IntakeSubsystem.ClawState.OPEN)),
                 new RetractDR4BCommand(robot,0),
-                new WaitCommand(300).andThen(new InstantCommand(() -> robot.intakeSubsystem.update(IntakeSubsystem.FourbarState.INTAKE)))
+                new WaitCommand(150).andThen(new InstantCommand(() -> robot.intakeSubsystem.update(IntakeSubsystem.FourbarState.INTAKE)))
         );
     }
 }
