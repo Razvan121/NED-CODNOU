@@ -13,16 +13,16 @@ public class IntakeSubsystem extends SubsystemBase {
     private double closePos=0.9;
     private double openPos=0.65;
 
-  public static double intake_Pos1 = 0.76;//74
-  public static double intake_Pos2 = 0.76;
-  public static  double intakeTransitionIntake_Pos1 = 0.66;
-  public static double intakeTransitionIntake_Pos2 = 0.66;
-  public static double intakeTransitionDeposit_Pos1 =0.45;
-  public static double intakeTransitionDeposit_Pos2 =0.45;
-  public static double intakeDeposit_Pos1 =0.3;
-  public static double intakeDeposit_Pos2 =0.3;
-  public static double intakeJunction_Pos1 = 0.25;
-  public static double intakeJunction_Pos2 = 0.25;
+  public static double intake_Pos1 = 0.8;//74
+  public static double intake_Pos2 = 0.8;
+  public static  double intakeTransitionIntake_Pos1 = 0.70;
+  public static double intakeTransitionIntake_Pos2 = 0.70;
+  public static double intakeTransitionDeposit_Pos1 =0.49;
+  public static double intakeTransitionDeposit_Pos2 =0.49;
+  public static double intakeDeposit_Pos1 =0.34;
+  public static double intakeDeposit_Pos2 =0.34;
+  public static double intakeJunction_Pos1 = 0.29;
+  public static double intakeJunction_Pos2 = 0.29;
 
   public int offset = 0;
   public double offset2= 0;
