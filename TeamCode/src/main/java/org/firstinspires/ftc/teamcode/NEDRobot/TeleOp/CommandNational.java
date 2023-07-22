@@ -111,6 +111,13 @@ public class CommandNational extends CommandOpMode {
             );
         }
 
+        robot.drive.setWeightedDrivePower(
+                new Pose2d(dead(scale(GamepadEx1.getLeftY(), 0.6), 0) * (gamepad1.left_trigger > 0.5 ? 0.3 : 1),
+                        dead(-scale(GamepadEx1.getLeftX(), 0.6), 0) * (gamepad1.left_trigger > 0.5 ? 0.3 : 1),
+                        (robot.dr4bSubsystem.isExtended()? -scale(GamepadEx1.getRightX(),0.6) *0.3 :-scale(GamepadEx1.getRightX(),0.6)* (gamepad1.left_trigger > 0.5 ? 0.3 : 1))
+                )
+        );
+
 
         if(gamepad1.left_bumper)
         {

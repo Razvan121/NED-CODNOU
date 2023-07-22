@@ -112,6 +112,11 @@ public class Dr4bSubsystem extends SubsystemBase {
         profile = MotionProfileGenerator.generateSimpleMotionProfile(new MotionState(getDr4bPosition(),0),new MotionState(targetPos,0),max_v,max_a);
         resetTimer();
     }
+
+    public boolean isExtended()
+    {
+            return dr4b_motor.getCurrentPosition()>100;
+    }
   /*  public void newProfile(double targetPos, double max_v, double max_a) {
             this.newProfile(targetPos, max_v, max_a, max_a);
         }
